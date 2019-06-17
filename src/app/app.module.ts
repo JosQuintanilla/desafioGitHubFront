@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { app_routing } from './app.routes'
 import { HttpClientModule } from '@angular/common/http';
 import { UsuarioModel } from '../../src/app/model/usuario.model';
 import { AppComponent } from './app.component';
@@ -14,7 +15,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [
-    BrowserModule,HttpClientModule,FormsModule
+    BrowserModule,HttpClientModule,FormsModule,app_routing
   ],
   providers: [UsuarioModel],
   bootstrap: [AppComponent]

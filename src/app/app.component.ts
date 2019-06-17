@@ -28,6 +28,7 @@ constructor(private usuarioModel: UsuarioModel, private service: ServiciosExtern
       console.log('buscarUSuario - usuarioModel avatar: ',this.usuarioModel.avatar_url);
     }, (responseError)=>{
       console.log('buscarUSuario - responseERROR: ',responseError);
+      //this.router.navigateByUrl(['show_alunos']);
     });
     console.log('buscarUSuario - end');
   }
