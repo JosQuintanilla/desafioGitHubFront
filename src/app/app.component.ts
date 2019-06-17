@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuarioModel } from '../../src/app/model/usuario.model';
 import { ServiciosExternosService } from './../../src/app/services/servicios-externos.service'; 
 
 @Component({
@@ -7,13 +8,14 @@ import { ServiciosExternosService } from './../../src/app/services/servicios-ext
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-constructor(private service: ServiciosExternosService){}
-
+constructor(private usuarioModel: UsuarioModel, private service: ServiciosExternosService){}
   title = 'desafioGutHubFront';
+
   userName = '';
 
   ngOnInit(){
     console.log('Usuario es : '+this.userName);
+    this.usuarioModel = new UsuarioModel();
   }
 
   buscarUSuario(){
@@ -21,6 +23,9 @@ constructor(private service: ServiciosExternosService){}
 
     this.service.makeGetRequest('desafio','buscarUsuario',this.userName).subscribe((response)=>{
       console.log('buscarUSuario - response: ',response);
+      this.usuarioModel = response.usuario;
+      console.log('buscarUSuario - usuarioModel: ',this.usuarioModel);
+      console.log('buscarUSuario - usuarioModel avatar: ',this.usuarioModel.avatar_url);
     }, (responseError)=>{
       console.log('buscarUSuario - responseERROR: ',responseError);
     });

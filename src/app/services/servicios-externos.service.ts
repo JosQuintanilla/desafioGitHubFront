@@ -12,7 +12,7 @@ export class ServiciosExternosService {
       //url: "https://fathomless-depths-56339.herokuapp.com/api/",
       url: "http://localhost:8080/",
       path: {
-        buscarUsuario: "users",
+        buscarUsuario: "users/?",
         buscarRepos: "users/?/repos"
       }
     }
@@ -39,11 +39,16 @@ export class ServiciosExternosService {
     return endpoint.url + (endpoint.url && endpoint.path[path]) || path ;
   }
 
-  makeGetRequest(bff: string, path: string,data: any): Observable<any> {
+  makeGetRequest(bff: string, path: string,data: string): Observable<any> {
     console.log("Service - makeGetRequest");
-     console.log("Service - makeGetRequest url: ",this.resolveUrl(bff, path));
+    console.log("Service - makeGetRequest path: ",path);
     console.log("Service - makeGetRequest data: ",data);
-    return this.http.get(this.resolveUrl(bff, path+'/'+data));
+    
+    console.log("Service - makeGetRequest url: ",this.resolveUrl(bff, path));
+    var pathFinal = this.resolveUrl(bff, path);
+    pathFinal = pathFinal.replace('?', data)
+    console.log("Service - makeGetRequest pathFinal: ",pathFinal);
+    return this.http.get(pathFinal);
   }
 
   makePostRequest(bff: string, path: string, data: any): Observable<any> {
