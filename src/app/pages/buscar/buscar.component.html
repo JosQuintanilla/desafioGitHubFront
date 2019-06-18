@@ -1,0 +1,13 @@
+<div class="actv_container footer-bg">
+  <form (submit)="buscarUSuario()">
+    <div>
+      <legend>Gighub Search</legend>
+    </div>
+    <div>
+      <input matInput placeholder="" #nombre maxlength="80" [(ngModel)]="userName" name="Name" required>
+    </div>
+    <div>
+      <button name="registrar" class="btn btn-primary btn-block btn-sm">Buscar</button>
+    </div>
+  </form>
+</div>
