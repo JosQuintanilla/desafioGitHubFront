@@ -1,13 +1,25 @@
-  <div>
-    <legend>Gighub Search</legend>
+<section id="not-found" class="mt-5">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <div class="Github-Search col-xs-12 col-md-4">
+        <h1 class="text-style-1">Gighub Search</h1>
+      </div>
+
+      <div class="col-xs-12 col-md-8 input-group mb-5">
+        <input #nombre maxlength="80" name="Name" type="text" class="form-control Search-Input" placeholder="" aria-label="">
+        <div class="input-group-append">
+        <button type="submit" name="registrar" class="btn btn-primary btn-block btn-sm">Buscar</button>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-xs-12">
+        <h3 class="Not-found-message">User not found :(</h3>
+      </div>
+
+    </div>
   </div>
-  <div>
-    <input matInput placeholder="" #nombre maxlength="80" name="Name" required>
-  </div>
-  <div>
-    <button name="registrar" class="btn btn-primary btn-block btn-sm">Buscar</button>
-  </div>
-  <div>
-    <legend>User not found</legend>
-  </div>
+</section>
 
