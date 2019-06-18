@@ -9,7 +9,7 @@ import { ServiciosExternosService } from './../../../../src/app/services/servici
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-  constructor(public usuarioModel: UsuarioModel, private service: ServiciosExternosService, private repositoriosModel: RepositoriosModel) {    
+  constructor(public usuarioModel: UsuarioModel, private service: ServiciosExternosService, public repositoriosModel: RepositoriosModel) {    
    }
   
   ngOnInit() {
