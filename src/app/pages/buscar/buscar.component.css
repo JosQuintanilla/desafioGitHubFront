@@ -1,0 +1,44 @@
+.Github-Search {
+  font-family: Monaco;
+  font-size: 60px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin: 0 auto;
+}
+@media (min-width: 1200px) {
+  .Github-Search {
+    width: 415px !important;
+    height: 81px !important;
+  }
+}
+.Github-Search .text-style-1 {
+  font-family: Raleway;
+  font-weight: 200;
+  font-style: italic;
+}
+.Search-Input {
+  width: 650px;
+  height: 50px;
+  background-color: var(--white);
+}
+@media (max-width: 767px) {
+  .Github-Search {
+    width: auto;
+    height: auto;
+    font-size: 2.5rem;
+    font-weight: 200;
+    font-style: italic;
+    text-align: center;
+  }
+  .Search-Input{
+    width: auto;
+  }
+}
+.btn-primary, .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+  background-color: #ac53f2;
+  border-color: #ac53f2;
+}
