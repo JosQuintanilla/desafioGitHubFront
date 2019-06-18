@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 export class BuscarComponent implements OnInit {
 
   constructor(private usuarioModel: UsuarioModel, private service: ServiciosExternosService, private routerPage: Router){
-
   }
 
   title = 'desafioGutHubFront';
@@ -30,9 +29,10 @@ export class BuscarComponent implements OnInit {
       console.log('buscarUSuario - codigo: ',response.codigo);
       if(response.codigo == "200"){
         this.usuarioModel = response.usuario;
+        localStorage.setItem('usuarioModel', JSON.stringify(response.usuario));
       console.log('buscarUSuario - usuarioModel: ',this.usuarioModel);
       console.log('buscarUSuario - usuarioModel avatar: ',this.usuarioModel.avatar_url);
-      this.routerPage.navigate(['perfil', this.usuarioModel]);//  'perfil',[this.userName]=this.usuarioModel);
+      this.routerPage.navigateByUrl('perfil');//  this.routerPage.navigate(['perfil', this.usuarioModel]);
       }else{
         console.log('buscarUSuario - distinto de 200: ',response.codigo);
         this.routerPage.navigateByUrl('notfound');

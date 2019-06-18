@@ -9,8 +9,8 @@ export class ServiciosExternosService {
 
   public endpoints: any = {
     desafio: {
-      //url: "https://fathomless-depths-56339.herokuapp.com/api/",
-      url: "http://localhost:8080/",
+      url: "https://limitless-sierra-22142.herokuapp.com/",
+      //url: "http://localhost:8080/",
       path: {
         buscarUsuario: "users/?",
         buscarRepos: "users/?/repos"
@@ -40,10 +40,7 @@ export class ServiciosExternosService {
   }
 
   makeGetRequest(bff: string, path: string,data: string): Observable<any> {
-    console.log("Service - makeGetRequest");
-    console.log("Service - makeGetRequest path: ",path);
-    console.log("Service - makeGetRequest data: ",data);
-    
+    console.log("Service - makeGetRequest");    
     console.log("Service - makeGetRequest url: ",this.resolveUrl(bff, path));
     var pathFinal = this.resolveUrl(bff, path);
     pathFinal = pathFinal.replace('?', data)

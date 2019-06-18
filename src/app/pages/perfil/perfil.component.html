@@ -1,4 +1,41 @@
-<p>
- WEEEEEEEEEEE perfil works!
- <img [src]="imagePath">
-</p>
+<section id="not-found" class="mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+  
+        <div class="Github-Search col-xs-12 col-md-4">
+          <h1 class="text-style-1">Gighub Search</h1>          
+        </div>
+  
+        <div class="col-xs-12 col-md-8 input-group mb-5">
+          <input #nombre maxlength="80" name="Name" type="text" class="form-control Search-Input" placeholder="{{usuarioModel.login}}" aria-label="">
+          <div class="input-group-append">
+            <button type="submit" name="registrar" class="btn btn-primary btn-block btn-sm">
+              <i class="fa fa-2x fa-search"></i>
+            </button>
+          </div>
+        </div>
+  
+        <div>
+            <img [src]="usuarioModel.avatar_url">
+        </div>
+        
+        <div class="clearfix">
+            <ul>
+                <h2> <li *ngFor="let repo of repositoriosModel">{{repo.name }} F {{ repo.id }}</li> </h2>
+            </ul>
+        </div>
+            
+ 
+      </div>
+      <div>
+        <h2>{{ usuarioModel.login }}</h2>
+      </div>  
+      <div>
+        <h1>{{ usuarioModel.id }}</h1>
+      </div> 
+      <div>
+        <h1>{{ usuarioModel.bio }}</h1>
+      </div> 
+      
+    </div>
+  </section>
