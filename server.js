@@ -6,11 +6,11 @@ const app = express();
 
 // Serve only the static files form the dist directory
 // Replace the '/dist/<to_your_project_name>'
-app.use(express.static(__dirname + '/dist/desafioFront/'));
+app.use(express.static(__dirname + '/dist/desafio-gut-hub-front/'));
 
 app.get('*', function(req,res) {
   // Replace the '/dist/<to_your_project_name>/index.html'
-  res.sendFile(path.join(__dirname+ '/dist/desafioFront/index.html'));
+  res.sendFile(path.join(__dirname+ '/dist/desafio-gut-hub-front/index.html'));
 });
 console.log('Server Up');
 // Start the app by listening on the default Heroku port
